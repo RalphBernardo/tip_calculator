@@ -1,6 +1,6 @@
-meal = 44.53
-tax = 0.0675
-tip = 0.15
+meal = float(raw_input("Enter the cost of your meal before tax: "))
+tax = float(raw_input("Enter the tax rate as a percentage: "))/100
+tip = float(raw_input("Enter your tip as a percentage: "))/100
 
 tax_value = meal * tax
 meal_with_tax = meal + tax_value
