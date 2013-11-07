@@ -4,34 +4,40 @@ def meal_input(meal):
     while True:
         try:
             meal = float(meal)
+            if meal < 0:
+                print "You must supply a positive number for your meal cost."
+                meal = float(raw_input("Please enter your meal cost: "))
         except ValueError:
             print "You must supply a number for your meal cost."
             meal = raw_input("Please enter your meal cost: ")
         else:
             return meal
-            break
 
 def tax_input(tax):
     while True:
         try:
             tax = float(tax)
+            if tax < 0 or tax > 100:
+                print "You must supply a number between 0 and 100 for the tax rate."
+                tax = float(raw_input("Please enter the tax rate: "))
         except ValueError:
-            print "You must supply a number between 0 and 100 for the tax rate."
-            tax = raw_input("Please enter your tax rate: ")
+            print "You must supply a number for the tax rate."
+            tax = raw_input("Please enter the tax rate: ")
         else:
             return tax
-            break
 
 def tip_input(tip):
     while True:
         try:
             tip = float(tip)
+            if tip < 0:
+                print "You must supply a positive number for your tip percentage."
+                tip = float(raw_input("Please enter your tip percentage: "))
         except ValueError:
-            print "You must supply a positive number for your tip percentage."
+            print "You must supply a number for your tip percentage."
             tip = raw_input("Please enter your tip percentage: ")
         else:
             return tip
-            break
 
 def calculate_costs(meal, tax, tip):
     """
